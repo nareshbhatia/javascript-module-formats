@@ -3,5 +3,8 @@
   "description": "Simple project showing how to run various JavaScript module formats",
   "version": "1.0.0",
   "author": "Naresh Bhatia",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^2.0.5"
+  }
 }

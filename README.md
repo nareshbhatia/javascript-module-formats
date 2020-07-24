@@ -8,29 +8,62 @@ in Node and the browser. The following formats are used:
    
 2. ES Modules: This is the ES6 format that uses `export` and `import` syntax.
 
-## Examples
+## Node.js Examples
 
 To run each example, change to the appropriate directory and run the listed
-commands. For browser examples install a static HTTP server globally, e.g.
-`npm install -g serve`
+commands.
 
 
-### 1-node-commonjs
+### node-1-commonjs
 
-```bash
-node src/index.js
-```
-
-### 2-node-esmodules
+This example uses CommonJS modules (`exports` and `require`) and runs them
+directly in Node.
 
 ```bash
 node src/index.js
 ```
 
-### 3-browser-esmodules
+### node-2-esmodules
+
+This example uses ES modules (`export` and `import`) and runs them directly
+in Node. This is achieved by adding `"type": "module"` in package.json.
+
+
+```bash
+node src/index.js
+```
+
+### node-3-es6-babel
+
+In this example, the ES6 source is transpiled to ES5 using Babel. Babel outputs
+CommonJS modules in the dist folder with `exports` and `require`. The
+transpiled code is then run in Node.
+
+You can play with Babel's `targets` option to control the kind of code that is
+generated (see `babel.config.js`). For example, change the target
+`node: 'current'` to `"ie": "11"`. This will transpile the arrow functions
+in `temperature.js` to ES5 style functions.
+
+```bash
+npm install
+npm run build
+node dist/index.js
+```
+
+## Browser Examples
+
+To run browser example, install a static HTTP server globally, e.g.
+`npm install -g serve`. Then change to the appropriate directory
+and run the listed commands. Finally, point your browser to
+http://localhost:5000.
+
+
+### browser-1-esmodules
+
+This example uses ES modules (`export` and `import`) and runs them directly
+in Node. This is achieved by adding `type="module"` on the `<script>` tag
+(see `index.html`).
 
 ```bash
 serve src
 ```
-
-Point your browser to http://localhost:5000.

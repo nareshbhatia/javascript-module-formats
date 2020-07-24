@@ -1,0 +1,12 @@
+{
+  "name": "node-4-typescript-babel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
+}

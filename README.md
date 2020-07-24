@@ -62,6 +62,19 @@ npm run build
 node dist/index.js
 ```
 
+### node-5-typescript-tsc
+
+In this example, the TypeScript source is compiled to ES6 using the TypeScript
+compiler. ES6 because Node.js can run ES6, except for `import` and `export`
+statements. Hence, we ask the TypeScript compiler to output commonjs modules.
+The compiled code is then run in Node.
+
+```bash
+npm install
+npm run build
+node dist/index.js
+```
+
 ## Browser Examples
 
 To run browser example, install a static HTTP server globally, e.g.
